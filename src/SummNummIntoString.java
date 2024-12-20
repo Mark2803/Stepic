@@ -19,19 +19,21 @@ import java.util.Scanner;
 
 public class SummNummIntoString {
     public static void main(String[] args) {
-        TwoDimensionalArray();
-    }
-
-
-    // Метод для создания двумерного массива
-    public static void TwoDimensionalArray() {
         Scanner in = new Scanner(System.in);
+        int sum  = 0;
 
         // Ввод размеров массива
         System.out.print("Введите количество строк: ");
         int x = in.nextInt();
         System.out.print("Введите количество столбцов: ");
         int y = in.nextInt();
+
+        System.out.print("Выберите строку: ");
+        int k = in.nextInt();
+        if (k > x) {
+            System.out.print("Вы ввели не допустимое число");
+            return;
+        }
 
         int[][] arr = new int[x][y];
 
@@ -47,11 +49,22 @@ public class SummNummIntoString {
         System.out.println("Введенный массив:");
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
-                // arr[i][j] = in.nextInt();
-                System.out.print(arr[i] [j] + " ");
+                System.out.print(arr[i][j] + " ");
+
             }
             System.out.println();
         }
         in.close(); // Закрываем Scanner
+
+        System.out.println("Сумма чисел строки:");
+
+            for (int j = 0; j < y; j++) {
+                //int sum = 0;
+                sum = sum + arr[k - 1][j];
+            }
+        System.out.print(sum);
+
+        }
     }
-}
+
+
