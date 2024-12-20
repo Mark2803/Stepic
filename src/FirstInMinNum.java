@@ -21,29 +21,34 @@ public class FirstInMinNum {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
+        System.out.println("Введите количество строк: ");
         int x = in.nextInt();
+        System.out.println("Введите количество столбцов: ");
         int y = in.nextInt();
 
         int[][] arr = new int[x][y];
 
         // Заполнение двумерного массива
+        System.out.print("Заполните массив числами: ");
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
                 arr[i][j] = in.nextInt();
             }
         }
-
+        System.out.println();
         int minRow = 0;
         int minCol = 0;
         int minVal = arr[0][0];
 
-        for (int i = 0; i < x; i++) {
+
+             for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
                 if (arr[i][j] < minVal) {
                     minVal = arr[i][j];
                     minRow = i;
                     minCol = j;
-                    System.out.print(minRow + " " + minCol + " ");
+                    System.out.print("Индекс минимального числа: " + minRow + " " + minCol);
+                    //System.out.print(minRow + " " + minCol);
                 }
             }
         }
